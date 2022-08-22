@@ -1,0 +1,17 @@
+{
+    "include": [
+        "./src/**/*"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@": [
+                "src"
+            ],
+            "gnbui":[
+                "./node_modules/gnb-ui/src"
+            ]
+        },
+        "jsx": "preserve"
+    }
+}
