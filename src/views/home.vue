@@ -103,10 +103,11 @@ const bubbles = calcRandomArr();
   }
   .wapper {
     display: flex;
-    max-height: 450px;
-    max-width: 420px;
+    max-height: 300px;
+    max-width: 650px;
     #slogan {
       color: #ffffff;
+      font-size: 60px;
       text-align: center; /* 文本对齐中间 */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
       z-index: 2;

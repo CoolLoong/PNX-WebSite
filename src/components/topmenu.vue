@@ -58,7 +58,7 @@ onUnmounted(() => window.removeEventListener("scroll", navigation));
 function navigation() {
   //滚动距离效果
   let scrollY = document.documentElement.scrollTop;
-  if (scrollY > 400) {
+  if (scrollY >= 520) {
     isActive.value = false;
   } else {
     isActive.value = true;

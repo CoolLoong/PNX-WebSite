@@ -1,82 +1,96 @@
 <template>
   <section id="about">
     <div class="container">
-      <div class="row">
-        <h1>About</h1>
+      <div class="frist">
+        <h2>{{ $t("message.about-frist") }}</h2>
         <div class="block"></div>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
-        </p>
       </div>
-      <div class="row">
-        <div class="six columns">
-          <textcardVue></textcardVue>
-        </div>
-        <div class="six columns">
-          <h3><span class="typcn typcn-pen icon"></span>Our Approach</h3>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
-          </p>
-        </div>
-        <div class="row">
-          <div class="six columns">
-            <h3><span class="typcn typcn-cog-outline icon"></span>Our Goal</h3>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
-            </p>
-          </div>
-          <div class="six columns">
-            <h3><span class="typcn typcn-lightbulb icon"></span>Our Mission</h3>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
-            </p>
-          </div>
-        </div>
+      <div class="group">
+        <textCard
+          v-for="textCard in textCardGroup"
+          :typcn-icon="textCard.icon"
+          :title="textCard.title"
+          :content="textCard.content"
+          :key="textCard.id"
+        >
+        </textCard>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import textcardVue from './textcard.vue';
+import textCard from "./textcard.vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+const textCardGroup = [
+  {
+    icon: "typcn-chart-line",
+    title: t("message.about-textcard1-title"),
+    content: t("message.about-textcard1-content"),
+  },
+  {
+    icon: "typcn-folder-add",
+    title: t("message.about-textcard2-title"),
+    content: t("message.about-textcard2-content"),
+  },
+  {
+    icon: "typcn-cog-outline",
+    title: t("message.about-textcard3-title"),
+    content: t("message.about-textcard3-content"),
+  },
+  {
+    icon: "typcn-device-desktop",
+    title: t("message.about-textcard4-title"),
+    content: t("message.about-textcard4-content"),
+  },
+  {
+    icon: "typcn-puzzle-outline",
+    title: t("message.about-textcard5-title"),
+    content: t("message.about-textcard5-content"),
+  },
+  {
+    icon: "typcn-th-small-outline",
+    title: t("message.about-textcard6-title"),
+    content: t("message.about-textcard6-content"),
+  }
+];
 </script>
 
 <style lang="scss" scoped>
 #about {
-  padding: 100px 0 50px 0;
-  h1 {
-    line-height: 1.2;
-    letter-spacing: -0.1rem;
-  }
-  .block {
-    width: 70px;
-    height: 2px;
-    background: #e55d87;
-    background: -moz-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
-    background: -webkit-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
-    background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
-    margin-bottom: 50px;
-  }
+  padding: 120px 0 50px 0;
   .container {
     position: relative;
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px;
+    height: 600px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+    .group {
+      display: flex;
+      flex-wrap: wrap; //装不下就换行
+      justify-content: space-between;
+      align-content: space-between;
+      height: 455px;
+      overflow: hidden;
+    }
+    .frist {
+      h2 {
+        font-size: 40px;
+        font-weight: 300;
+      }
+      .block {
+        width: 70px;
+        height: 2px;
+        background: #e55d87;
+        background: -moz-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+        background: -webkit-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+        background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+        margin-bottom: 50px;
+      }
+    }
   }
   .container:after,
   .row:after,
