@@ -25,9 +25,10 @@
             </div>
             <div class="righticon">
               <div class="link">
-                <ion-icon name="logo-github"></ion-icon>
-                <ion-icon name="logo-discord"></ion-icon>
+                <ion-icon name="logo-github" @click="turnOtherWebsite('https://github.com/PowerNukkitX/PowerNukkitX')"></ion-icon>
+                <ion-icon name="logo-discord" @click="turnOtherWebsite('https://discord.gg/XXus4FB6qf')"></ion-icon>
                 <ion-icon name="mail-outline"></ion-icon>
+                <ion-icon name="people-outline" @click="turnOtherWebsite('https://jq.qq.com/?_wv=1027&k=FmV7FLaO')"></ion-icon>
               </div>
               <Lang></Lang>
             </div>
@@ -63,6 +64,10 @@ function navigation() {
     isActive.value = true;
   }
 }
+
+function turnOtherWebsite(url){
+  window.open(url,"_blank");
+}
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +80,7 @@ function navigation() {
   position: fixed;
   height: 100%;
   width: 100%;
-  max-height: 60px;
+  max-height: 60PX;
   z-index: 3;
   background: none;
   overflow: hidden;
@@ -169,7 +174,7 @@ function navigation() {
           flex-direction: column; //主轴设为纵向
           text-transform: uppercase; //转换文字大写
           font-weight: 500;
-          font-size: 15px;
+          font-size: 15PX;
           text-decoration: none;
           color: rgba(0, 0, 0, 0.8);
           margin-right: 30px;
@@ -199,20 +204,20 @@ function navigation() {
         display: flex;
         align-items: center;
         ion-icon {
-          top: 3px;
-          margin-left: 5px;
+          top: 3PX;
+          margin-left: 5PX;
         }
         .link ion-icon {
           position: relative;
-          font-size: 25px;
-          max-height: 35px;
+          font-size: 25PX;
+          max-height: 35PX;
           color: rgba(0, 0, 0, 0.8);
           transform: scale3d(1, 1, 1);
           transition: all 0.35s linear;
           cursor: pointer;
           &:nth-child(2) {
             position: relative;
-            top: 4px;
+            top: 4PX;
           }
           &:hover {
             color: rgba(0, 0, 0, 1);

@@ -73,7 +73,7 @@ function setLang(lang) {
     }
   }
   ion-icon {
-    font-size: 25px;
+    font-size: 25PX;
     transition: transform 0.7s, color 0.7s;
     -webkit-transition: transform 0.7s, color 0.7s; //适配safari
     cursor: pointer;
