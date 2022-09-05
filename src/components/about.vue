@@ -21,9 +21,10 @@
 
 <script setup>
 import textCard from "./textcard.vue";
+import { reactive, watch } from "vue";
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-const textCardGroup = [
+const { t, locale } = useI18n();
+const textCardGroup = reactive([
   {
     icon: "typcn-chart-line",
     title: t("message.about-textcard1-title"),
@@ -53,8 +54,20 @@ const textCardGroup = [
     icon: "typcn-th-small-outline",
     title: t("message.about-textcard6-title"),
     content: t("message.about-textcard6-content"),
+  },
+]);
+
+//监听语言更改，然后更新CardGroup内容
+watch(locale, async (newLocale, oldLocale) => {
+  updateTextCardGroup();
+});
+
+function updateTextCardGroup() {
+  for (let i = 0, len = textCardGroup.length; i < len; ++i) {
+    textCardGroup[i].title = t(`message.about-textcard${i+1}-title`);
+    textCardGroup[i].content = t(`message.about-textcard${i+1}-content`);
   }
-];
+}
 </script>
 
 <style lang="scss" scoped>
