@@ -22,10 +22,11 @@ const props = defineProps(["typcnIcon", "title", "content"]);
 }
 
 .text-card{
-  max-height: 300px;
+  max-height: 220px;
+  min-height: 160px;
   max-width: 375px;
   h3{
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 200;
     margin-bottom: 20px;
   }

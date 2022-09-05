@@ -76,17 +76,18 @@ function updateTextCardGroup() {
   .container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    height: 600px;
+    max-width: 1250px;
+    max-height: 800px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+    overflow: hidden;
     .group {
       display: flex;
       flex-wrap: wrap; //装不下就换行
       justify-content: space-between;
       align-content: space-between;
-      height: 455px;
+      max-height: 800px;
       overflow: hidden;
     }
     .frist {
