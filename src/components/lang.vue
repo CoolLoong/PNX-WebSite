@@ -1,27 +1,13 @@
 <template>
   <div class="lang">
-    <ion-icon
-      name="language-outline"
-      id="lang-trigger"
-      class="md hydrated"
-      :class="{ 'scale3d-enable': langActive, 'scale3d-disable': !langActive }"
-      @mouseover="setLangActive(true)"
-      @mouseleave="setLangActive(false)"
-    ></ion-icon>
+    <ion-icon name="language-outline" id="lang-trigger" class="md hydrated"
+      :class="{ 'scale3d-enable': langActive, 'scale3d-disable': !langActive }" @mouseover="setLangActive(true)"
+      @mouseleave="setLangActive(false)"></ion-icon>
     <Transition name="zoom">
-      <div
-        class="lang-dropdown"
-        v-show="langActive"
-        @mouseover="setLangActive(true)"
-        @mouseleave="setLangActive(false)"
-      >
+      <div class="lang-dropdown" v-show="langActive" @mouseover="setLangActive(true)"
+        @mouseleave="setLangActive(false)">
         <ul>
-          <li
-            v-for="k in langs"
-            class="lang-option"
-            :key="k.id"
-            @click="setLang(k['lang'])"
-          >
+          <li v-for="k in langs" class="lang-option" :key="k.id" @click="setLang(k['lang'])">
             {{ k["name"] }}
           </li>
         </ul>
@@ -52,8 +38,8 @@ function setLangActive(value) {
   }
 }
 
+//调整网页语言
 function setLang(lang) {
-  // //调整网页语言
   document.getElementsByTagName("html")[0].setAttribute("lang", lang);
   document.getElementsByTagName("html")[0].setAttribute("xml:lang", lang);
   locale.value = lang;
@@ -67,17 +53,20 @@ function setLang(lang) {
   flex-direction: column;
   align-items: center;
   margin-left: 5px;
+
   @media screen and (max-width: 1150px) {
     & {
       margin-right: 100px;
     }
   }
+
   ion-icon {
     font-size: 25PX;
     transition: transform 0.7s, color 0.7s;
     -webkit-transition: transform 0.7s, color 0.7s; //适配safari
     cursor: pointer;
   }
+
   .lang-dropdown {
     position: fixed;
     z-index: 4;
@@ -86,6 +75,7 @@ function setLang(lang) {
     padding-top: 10px;
     min-width: auto;
     height: auto;
+
     ul {
       display: flex;
       flex-direction: column; //主轴垂直,辅轴水平
@@ -97,6 +87,7 @@ function setLang(lang) {
       padding: 10px;
       -webkit-box-shadow: 0 5px 20px 0 rgb(0 0 0 / 5%);
       box-shadow: 0 5px 20px #0000002c;
+
       li {
         padding: 5px 5px;
         width: 100%;
@@ -110,6 +101,7 @@ function setLang(lang) {
         font-weight: 700;
         -webkit-transition: all 0.25s ease, color 0s; //适配safari
         transition: all 0.25s ease, color 0s;
+
         &:hover {
           color: #000000;
           opacity: 1;
@@ -118,9 +110,11 @@ function setLang(lang) {
     }
   }
 }
+
 .zoom-enter-active {
   animation: zoomIn 0.5s;
 }
+
 .zoom-leave-active {
   animation: zoomOut 0.25s;
 }
@@ -130,6 +124,7 @@ function setLang(lang) {
   color: rgba(0, 0, 0, 1);
   transform: scale3d(1.1, 1.1, 1.1);
 }
+
 .scale3d-disable {
   color: rgba(0, 0, 0, 0.8);
   transform: scale3d(1, 1, 1);

@@ -6,13 +6,8 @@
         <div class="block"></div>
       </div>
       <div class="group">
-        <textCard
-          v-for="textCard in textCardGroup"
-          :typcn-icon="textCard.icon"
-          :title="textCard.title"
-          :content="textCard.content"
-          :key="textCard.id"
-        >
+        <textCard v-for="textCard in textCardGroup" :typcn-icon="textCard.icon" :title="textCard.title"
+          :content="textCard.content" :key="textCard.id">
         </textCard>
       </div>
     </div>
@@ -64,8 +59,8 @@ watch(locale, async (newLocale, oldLocale) => {
 
 function updateTextCardGroup() {
   for (let i = 0, len = textCardGroup.length; i < len; ++i) {
-    textCardGroup[i].title = t(`message.about-textcard${i+1}-title`);
-    textCardGroup[i].content = t(`message.about-textcard${i+1}-content`);
+    textCardGroup[i].title = t(`message.about-textcard${i + 1}-title`);
+    textCardGroup[i].content = t(`message.about-textcard${i + 1}-content`);
   }
 }
 </script>
@@ -73,6 +68,7 @@ function updateTextCardGroup() {
 <style lang="scss" scoped>
 #about {
   padding: 120px 0 50px 0;
+
   .container {
     position: relative;
     width: 100%;
@@ -82,6 +78,7 @@ function updateTextCardGroup() {
     padding: 0 20px;
     box-sizing: border-box;
     overflow: hidden;
+
     .group {
       display: flex;
       flex-wrap: wrap; //装不下就换行
@@ -90,14 +87,16 @@ function updateTextCardGroup() {
       max-height: 800px;
       overflow: hidden;
     }
+
     .frist {
       h2 {
         font-size: 40px;
         font-weight: 300;
       }
+
       .block {
-        width: 70px;
-        height: 2px;
+        width: 95px;
+        height: 3px;
         background: #e55d87;
         background: -moz-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
         background: -webkit-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
@@ -106,6 +105,7 @@ function updateTextCardGroup() {
       }
     }
   }
+
   .container:after,
   .row:after,
   .u-cf {
@@ -113,6 +113,7 @@ function updateTextCardGroup() {
     display: table;
     clear: both;
   }
+
   .six.columns {
     width: 48%;
   }

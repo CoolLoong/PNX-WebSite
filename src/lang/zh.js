@@ -1,5 +1,5 @@
-export default  {
-    message:{
+export default {
+    message: {
         'home-slogan': 'Minecraft Bedrock<br>服务端 &#124 Nukkit API',
         'topmenu-menu1': '首页',
         'topmenu-menu2': '下载',
@@ -20,5 +20,14 @@ export default  {
         'about-textcard5-content': '您可以使用JS快速编写基于PNX的插件。基于ES13标准和ESM的JS插件引擎使得您可以快速稳定地构建大型插件，同时保留良好的跨插件交互性，JS插件可以与其他JS或Java插件无缝交互，与Java代码一道被融合编译，打破语言边界，获取超高性能。',
         'about-textcard6-title': '还有更多...',
         'about-textcard6-content': 'PNX还有许多优点，等待着在您在使用的过程中与您邂逅。',
+        'stat-title': 'PNX 使用统计',
+        'stat-span1': ' 台服务器',
+        'stat-span2': ' stars',
+        'stat-span3': ' 个',
+        'stat-span4': ' 个',
+        'stat-subtitle1': '此刻正在运行PNX',
+        'stat-subtitle2': '在Github平台上',
+        'stat-subtitle3': '已提交的Issue',
+        'stat-subtitle4': '已合并的PR',
     }
 };

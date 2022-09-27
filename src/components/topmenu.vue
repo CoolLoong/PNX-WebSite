@@ -13,10 +13,10 @@
             <div id="menu">
               <!-- TODO 写路由 -->
               <router-link to="/">{{
-                $t("message.topmenu-menu1")
+              $t("message.topmenu-menu1")
               }}</router-link>
               <router-link to="/download">{{
-                $t("message.topmenu-menu2")
+              $t("message.topmenu-menu2")
               }}</router-link>
               <a href="#">{{ $t("message.topmenu-menu3") }}</a>
               <a href="#">{{ $t("message.topmenu-menu4") }}</a>
@@ -25,10 +25,12 @@
             </div>
             <div class="righticon">
               <div class="link">
-                <ion-icon name="logo-github" @click="turnOtherWebsite('https://github.com/PowerNukkitX/PowerNukkitX')"></ion-icon>
+                <ion-icon name="logo-github" @click="turnOtherWebsite('https://github.com/PowerNukkitX/PowerNukkitX')">
+                </ion-icon>
                 <ion-icon name="logo-discord" @click="turnOtherWebsite('https://discord.gg/XXus4FB6qf')"></ion-icon>
                 <ion-icon name="mail-outline"></ion-icon>
-                <ion-icon name="people-outline" @click="turnOtherWebsite('https://jq.qq.com/?_wv=1027&k=FmV7FLaO')"></ion-icon>
+                <ion-icon name="people-outline" @click="turnOtherWebsite('https://jq.qq.com/?_wv=1027&k=FmV7FLaO')">
+                </ion-icon>
               </div>
               <Lang></Lang>
             </div>
@@ -55,8 +57,8 @@ let isActive = ref(true);
 onMounted(() => window.addEventListener("scroll", navigation)); //监听滚动
 onUnmounted(() => window.removeEventListener("scroll", navigation));
 
+//滚动距离隐藏top menu效果
 function navigation() {
-  //滚动距离效果
   let scrollY = document.documentElement.scrollTop;
   if (scrollY >= 520) {
     isActive.value = false;
@@ -65,14 +67,16 @@ function navigation() {
   }
 }
 
-function turnOtherWebsite(url){
-  window.open(url,"_blank");
+//打开外部网站
+function turnOtherWebsite(url) {
+  window.open(url, "_blank");
 }
 </script>
 
 <style lang="scss" scoped>
 .top {
-  display: -webkit-flex; /* Safari */
+  display: -webkit-flex;
+  /* Safari */
   display: flex;
   justify-content: center; //里面的元素水平垂直居中
   align-items: center;
@@ -87,12 +91,14 @@ function turnOtherWebsite(url){
   transition: all 0.3s;
   padding-bottom: 4px;
   background-color: #ffffff;
+
   .container {
     max-width: 1080px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+
     .mobile-toggle {
       display: none;
       cursor: pointer;
@@ -101,6 +107,7 @@ function turnOtherWebsite(url){
       right: 22px;
       top: 0;
       width: 30px;
+
       span {
         width: 30px;
         height: 4px;
@@ -109,19 +116,24 @@ function turnOtherWebsite(url){
         display: block;
       }
     }
+
     #topnav {
-      display: -webkit-flex; /*兼容Safari*/
+      display: -webkit-flex;
+      /*兼容Safari*/
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
+
       #logo {
         margin-right: auto;
+
         @media screen and (max-width: 1150px) {
           & {
             margin-right: auto;
           }
         }
+
         .logotext {
           font-weight: 500;
           font-size: 22px;
@@ -130,22 +142,21 @@ function turnOtherWebsite(url){
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
           color: #000000;
           opacity: 0.9;
+
           &:hover {
             transition: all 0.2s linear;
-            background-image: -webkit-linear-gradient(
-              left,
-              #e9a5a5,
-              #b8c1c0 10%,
-              #65c0e0 20%,
-              #aea2db 30%,
-              #81c1d9 40%,
-              #e9a5a5 50%,
-              #b8c1c0 60%,
-              #65c0e0 70%,
-              #aea2db 80%,
-              #81c1d9 90%,
-              #e9a5a5
-            );
+            background-image: -webkit-linear-gradient(left,
+                #e9a5a5,
+                #b8c1c0 10%,
+                #65c0e0 20%,
+                #aea2db 30%,
+                #81c1d9 40%,
+                #e9a5a5 50%,
+                #b8c1c0 60%,
+                #65c0e0 70%,
+                #aea2db 80%,
+                #81c1d9 90%,
+                #e9a5a5);
             text-shadow: none;
             opacity: 1;
             //文字透明
@@ -159,6 +170,7 @@ function turnOtherWebsite(url){
           }
         }
       }
+
       #menu {
         display: -webkit-flex;
         display: flex;
@@ -167,6 +179,7 @@ function turnOtherWebsite(url){
         justify-content: center;
         align-items: center;
         height: 30px;
+
         a {
           display: -webkit-flex;
           display: flex;
@@ -178,6 +191,7 @@ function turnOtherWebsite(url){
           text-decoration: none;
           color: rgba(0, 0, 0, 0.8);
           margin-right: 30px;
+
           &:after {
             content: "";
             position: absolute;
@@ -191,22 +205,27 @@ function turnOtherWebsite(url){
             transition: opacity 0.2s linear;
             opacity: 0;
           }
+
           &:hover {
             color: rgba(0, 0, 0, 1);
+
             &:after {
               opacity: 1;
             }
           }
         }
       }
+
       .righticon {
         display: -webkit-flex;
         display: flex;
         align-items: center;
+
         ion-icon {
           top: 3PX;
           margin-left: 5PX;
         }
+
         .link ion-icon {
           position: relative;
           font-size: 25PX;
@@ -215,10 +234,12 @@ function turnOtherWebsite(url){
           transform: scale3d(1, 1, 1);
           transition: all 0.35s linear;
           cursor: pointer;
+
           &:nth-child(2) {
             position: relative;
             top: 4PX;
           }
+
           &:hover {
             color: rgba(0, 0, 0, 1);
             transform: scale3d(1.1, 1.1, 1.1);
@@ -229,6 +250,7 @@ function turnOtherWebsite(url){
     }
   }
 }
+
 @keyframes colorful {
   0% {
     background-position: 0 0;
@@ -238,12 +260,14 @@ function turnOtherWebsite(url){
     background-position: -100% 0;
   }
 }
+
 /*过渡效果*/
 //nav
 .nav-enter-active,
 .nav-leave-active {
   transition: opacity 0.5s ease;
 }
+
 .nav-enter-from,
 .nav-leave-to {
   opacity: 0;
