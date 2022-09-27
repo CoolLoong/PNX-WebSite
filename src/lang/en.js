@@ -1,5 +1,5 @@
-export default  {
-    message:{
+export default {
+    message: {
         'home-slogan': 'Minecraft Bedrock <br/>Server &#124 Nukkit API',
         'topmenu-menu1': 'Home',
         'topmenu-menu2': 'Download',
@@ -20,5 +20,14 @@ export default  {
         'about-textcard5-content': 'You can quickly write PNX-based plugins using JS. The JS plugin engine, based on the ES13 standard and ESM, allows you to build large plugins quickly and stably while retaining good cross-plugin interactivity.',
         'about-textcard6-title': 'And more...',
         'about-textcard6-content': 'PNX has many other advantages waiting to meet you as you use it.',
+        'stat-title': 'PNX Stats',
+        'stat-span1': '',
+        'stat-span2': '',
+        'stat-span3': '',
+        'stat-span4': '',
+        'stat-subtitle1': 'Servers',
+        'stat-subtitle2': 'Stars',
+        'stat-subtitle3': 'New Issue Found',
+        'stat-subtitle4': 'Merge Pull Request',
     }
 };

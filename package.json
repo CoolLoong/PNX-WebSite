@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "axios": "^0.27.2",
     "gnb-ui": "^0.2.1-alpha",
+    "pinia": "^2.0.22",
     "typicons.font": "^2.1.2",
     "vue": "^3.2.37",
     "vue-i18n": "^9.2.0",
